@@ -58,21 +58,21 @@ accessed with IAM services,** **and
 [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support
 x509 and password access.**
 
-1. Once our team has this information we will create you a Rucio account.
+1.       Once our team has this information we will create you a Rucio account.
 
-1. You will then need to install a containerised client on your computer.
+1.  You will then need to install a containerised client on your computer.
 
-   - Install Docker to run the container
-   - <https://www.docker.com/get-started> (for windows users I would recommend
-     using WSL2)
-   - Follow the docker instructions to ensure it is running correctly.
-   - Using openSSL you will need to split your grid certificate bundle into the
-     certificate and key:
+- Install Docker to run the container
+- <https://www.docker.com/get-started> (for windows users I would recommend
+  using WSL2)
+- Follow the docker instructions to ensure it is running correctly.
+- Using openSSL you will need to split your grid certificate bundle into the
+  certificate and key:
 
-   ```shell
-   $ openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys
-   $ openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes
-   ```
+```shell
+$ openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys
+$ openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes
+```
 
 1. Run the Docker container using the following command:
 
