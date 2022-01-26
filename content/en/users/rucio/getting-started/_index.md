@@ -58,9 +58,9 @@ accessed with IAM services,** **and
 [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support
 x509 and password access.**
 
-1.        Once our team has this information we will create you a Rucio account.
+1. Once our team has this information we will create you a Rucio account.
 
-1.  You will then need to install a containerised client on your computer.
+1. You will then need to install a containerised client on your computer.
 
 - Install Docker to run the container
 - <https://www.docker.com/get-started> (for windows users I would recommend
