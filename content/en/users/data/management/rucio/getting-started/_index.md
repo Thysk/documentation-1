@@ -12,23 +12,25 @@ description: >-
 - [**Rucio Storage Element**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
   (RSE) is another name for an endpoint, or storage solution.
 - [**Rules**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html)
-  are an instruction to Rucio to do a certain thing. This can be to
-  ensure file _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on
-  tape, or even on tape at more than one location, or even file _z_ has 2 copies at
-  any site within a selection of sites. How you set up the RSE and the
-  attributes you give them allows for many different strategies to transfer and ordanise data.
-  Once a rule is created, Rucio will get to work to ensure that the rule is satisfied at all times.
+  are an instruction to Rucio to do a certain thing. This can be to ensure file
+  _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on tape, or
+  even on tape at more than one location, or even file _z_ has 2 copies at any
+  site within a selection of sites. How you set up the RSE and the attributes
+  you give them allows for many different strategies to transfer and ordanise
+  data. Once a rule is created, Rucio will get to work to ensure that the rule
+  is satisfied at all times.
 - **File** is single file within Rucio.
 - **Dataset** is a collection of files, which may be a collection or related
   results, or data.
 - **Container** is a collection of Datasets which may build a larger subset of a
   whole experiment.
-- **Scope** is a collection in which files, datasets, and containers are
-  placed. Users will have their own scope, often user.username. But also
-  experiments, sub-experiments, or however you wish to orgaise the data can also
-  have scopes. Accounts can be given access to scopes by VO admins.
-- **Data Identifier** (DID) uiniquely identifies data in Rucio. It is made
-  up from the scope and the filename, seperated by a colon (e.g. _experiment1:file1_).
+- **Scope** is a collection in which files, datasets, and containers are placed.
+  Users will have their own scope, often user.username. But also experiments,
+  sub-experiments, or however you wish to orgaise the data can also have scopes.
+  Accounts can be given access to scopes by VO admins.
+- **Data Identifier** (DID) uiniquely identifies data in Rucio. It is made up
+  from the scope and the filename, seperated by a colon (e.g.
+  _experiment1:file1_).
 
 ## Getting started as a new user
 
@@ -78,7 +80,7 @@ the relevent information.
 $ run \
     -e RUCIO_CFG_RUCIO_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
     -e RUCIO_CFG_AUTH_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
-    -e RUCIO_CFG_AUTH_TYPE=x509 \
+    -e RUCIO_CFG_AUTH_TYPE=x509_proxy \
     -e RUCIO_CFG_CLIENT_VO=<3 CHAR VO NAME LOWERCASE> \
     -e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
     -e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
@@ -96,9 +98,9 @@ This block of code may look large but it is configuring Rucio to connect to the
 Multi-VO Rucio at RAL, your account and VO details, where you are loading them
 into the container, and mounting the authentication details into the container.
 
-The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/) The
-3 character VO name will be provided to you when you sign up for a Rucio
-account.
+**The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/).
+The 3 character VO name will be provided to you when you sign up for a Rucio
+account.**
 
 1. Run the following commands inside the docker container to finalise set up:
 
